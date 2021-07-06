@@ -15,22 +15,25 @@
             <div class="row">
                 <table class="table">
                     <thead>
-                      <tr>
+                        <tr>
                         <th scope="col">SL No</th>
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Created At</th>
-                      </tr>
+                        </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
+                        @php($i = 1)
+                        @foreach ($users as $item)
+                        <tr>
+                            <th scope="row">{{ $i++ }}</th>
+                            <td> {{ $item->name }} </td>
+                            <td> {{ $item->email }} </td>
+                            <td> {{ Carbon\Carbon::parse($item->created_at)->diffForHumans()}}</td>
+                        </tr>
+                        @endforeach
                     </tbody>
-                  </table>
+                    </table>
             </div>
         </div>
     </div>

@@ -7,6 +7,7 @@
     </x-slot>
 
     <div class="py-12">
+        <!-- Item -->
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
@@ -19,26 +20,40 @@
                                 </button>
                             </div>
                         @endif
-                        <div class="card-header">
+                        <div class="card-header">ຜູ້ໃຊ້ທັງໝົດ</div>
                             <table class="table">
                                 <thead>
-                                  <tr>
-                                    <th scope="col">SL No</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Created At</th>
-                                  </tr>
+                                    <tr>
+                                        <th scope="col">SL No</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">User</th>
+                                        <th scope="col">Created At</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                  <tr>
-                                    <th scope="row"></th>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                  </tr>
+                                        <!-- @php($i = 1) -->
+                                    @foreach ($allCate as $item)
+                                    <tr>
+                                        <th scope="row">{{ $allCate->firstItem()+$loop->index }}</th>
+                                        <td> {{ $item->category_name }} </td>
+                                        <td> {{ $item->name }} </td>
+                                        <td> 
+                                            @if($item->created_at == NULL)
+                                            <span class="text-danger">NO Date Set</span>
+                                            @else
+                                            {{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a href="{{ url('category/edit/'.$item->id) }}" class="btn btn-info">Edit</a>
+                                            <a href="{{ url('softdelete/category/'.$item->id) }}" class="btn btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                 </tbody>
-                              </table>
-                        </div>
+                            </table>
+                        {{ $allCate->links() }}
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -58,6 +73,53 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary mt-2">ເພີ່ມ ປະເພດຜູ້ໃຊ້</button>
                             </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TrashItem -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        
+                        <div class="card-header"> ຖັງຂີ້ເຫຍື່ອ</div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">SL No</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">User</th>
+                                        <th scope="col">Created At</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <!-- @php($i = 1) -->
+                                    @foreach ($trashCat as $trashCat)
+                                    <tr>
+                                        <th scope="row">{{ $allCate->firstItem()+$loop->index }}</th>
+                                        <td> {{ $trashCat->category_name }} </td>
+                                        <td> {{ $trashCat->name }} </td>
+                                        <td> 
+                                            @if($trashCat->created_at == NULL)
+                                            <span class="text-danger">NO Date Set</span>
+                                            @else
+                                            {{ Carbon\Carbon::parse($trashCat->created_at)->diffForHumans() }}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a href="{{ url('category/restore/'.$trashCat->id) }}" class="btn btn-info">Restore</a>
+                                            <a href="{{ url('pdelete/category/'.$trashCat->id) }}" class="btn btn-danger">P Delete</a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            {{ $allCate->links() }}
+
                         </div>
                     </div>
                 </div>

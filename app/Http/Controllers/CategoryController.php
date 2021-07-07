@@ -35,7 +35,7 @@ class CategoryController extends Controller
             'category_name.required' => 'ກະລຸນາປ້ອນຂໍ້ມູນກ່ອນ!!',
             'category_name.max' => 'ຊື່ປະເພດໜ້ອຍກວ່າ 255 ຕົວອັກສອນ!!',
         ]
-    );
+        );
 
     //Query Builder
     $data = array();

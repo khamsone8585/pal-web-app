@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
@@ -27,10 +28,18 @@ Route::post('category/add',[CategoryController::class,'AddCat'])->name('store.ca
 
 Route::get('category/edit/{id}',[CategoryController::class,'EditCat']);
 Route::post('category/update/{id}',[CategoryController::class,'UpdateCat']);
-
 Route::get('softdelete/category/{id}',[CategoryController::class,'SoftDelete']);
 Route::get('category/restore/{id}',[CategoryController::class,'Restore']);
 Route::get('pdelete/category/{id}',[CategoryController::class,'Pdelete']);
+
+
+//Brand
+Route::get('brand/all',[BrandController::class,'AllBrand'])->name('all.brand');
+Route::post('brand/add',[BrandController::class,'StoreBrand'])->name('store.brand');
+
+Route::get('brand/edit/{id}',[BrandController::class,'Edit']);
+Route::post('brand/update/{id}',[BrandController::class,'Update']);
+Route::get('brand/delete/{id}',[BrandController::class,'Delete']);
 
 
 

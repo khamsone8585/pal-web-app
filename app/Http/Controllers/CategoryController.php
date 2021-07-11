@@ -37,11 +37,11 @@ class CategoryController extends Controller
         ]
         );
 
-    //Query Builder
-    $data = array();
-    $data['category_name'] = $request->category_name;
-    $data['user_id'] = Auth::user()->id;
-    DB::table('categories')->insert($data);
+        //Query Builder
+        $data = array();
+        $data['category_name'] = $request->category_name;
+        $data['user_id'] = Auth::user()->id;
+        DB::table('categories')->insert($data);
 
     return Redirect()->back()->with('success','ເພີ່ມຂໍ້ມູນສຳເລັດ!!');
 

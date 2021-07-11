@@ -20,7 +20,10 @@ use App\Models\User;
 Route::get('/', function () {
     return view('welcome');
 });
-
+//Verifition_Email
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
 
 //Category Controller
 Route::get('category/all',[CategoryController::class,'AllCat'])->name('all.category');

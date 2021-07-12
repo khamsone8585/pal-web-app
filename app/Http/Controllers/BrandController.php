@@ -3,13 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brand;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Carbon;
 use Image;
+use Auth;
 
 class BrandController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
+
+    
     public function AllBrand(){
         $brands = Brand::latest()->paginate(5);
         return view('admin.brand.index',compact('brands'));
@@ -97,5 +104,10 @@ class BrandController extends Controller
         unlink($old_image);
         Brand::find($id)->delete();
         return Redirect()->back()->with('success','Brand Deleted Successfully');
+    }
+
+    public function Logout(){
+        Auth::logout();
+        return Redirect()->route('login')->with('success','User Logout!!');
     }
 }

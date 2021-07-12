@@ -1,0 +1,7 @@
+@font-face {
+    font-family: mydontlaos;
+    src: url('./fonts/NotoSansLao-Regular.ttf');
+}
+body{
+    font-family: myFontlaos , 'sans-serif' !important;
+}

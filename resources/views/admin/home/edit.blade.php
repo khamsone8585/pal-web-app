@@ -7,7 +7,7 @@
                 <h2>Edit About</h2>
             </div>
             <div class="card-body">
-                <form action="{{url('update/homeabout/'.$homeabout->id))}}" method="POST" enctype="multipart/form-data">
+                <form action="{{url('update/homeabout/'.$homeabout->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">About Content</label>

@@ -6,8 +6,8 @@
         <!-- Item -->
         <div class="container">
             <div class="row">
-                <h4>Home About</h4>
-                    {{-- <a href="{{ route('add.about') }}"><button class="btn btn-info">Add About</button></a> --}}
+                <h4>Contact Page</h4>
+                    <a href="{{ route('add.contact') }}"><button class="btn btn-info">Add Contact</button></a>
                 <br><br>
                 <div class="col-md-12">
                     <div class="card">
@@ -21,36 +21,37 @@
                             </div>
                         @endif
 
-                        <div class="card-header">All About data</div>
+                        <div class="card-header">All Contact data</div>
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">SL</th>
-                                        <th scope="col">About Content</th>
-                                        <th scope="col">About Vision</th>
-                                        <th scope="col">About Mission</th>
-                                        <th scope="col">Created At</th>
-                                        <th scope="col">Action</th>
+                                        <th scope="col" width="5%">SL</th>
+                                        <th scope="col" width="15%">Contact Address</th>
+                                        <th scope="col" width="25%">Contact Email</th>
+                                        <th scope="col" width="15%">Contact Phone</th>
+                                        <th scope="col" width="15%">Contact Open</th>
+                                        <th scope="col" width="15%">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                         @php($i = 1)
-                                    @foreach ($homeabout as $about)
+                                    @foreach ($contacts as $con)
                                     <tr>
                                         <th scope="row">{{ $i++ }}</th>
-                                        <td> {{ $about->content }} </td>
-                                        <td> {{ $about->vision }}  </td>
-                                        <td> {{ $about->mission }}  </td>
+                                        <td> {{ $con->address }} </td>
+                                        <td> {{ $con->email }}  </td>
+                                        <td> {{ $con->phone }}  </td>
+                                        <td> {{ $con->open }}  </td>
                                         <td> 
-                                            @if($about->created_at == NULL)
+                                            @if($con->created_at == NULL)
                                             <span class="text-danger">NO Date Set</span>
                                             @else
-                                            {{ Carbon\Carbon::parse($about->created_at)->diffForHumans() }}
+                                            {{ Carbon\Carbon::parse($con->created_at)->diffForHumans() }}
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{ url('about/edit/'.$about->id) }}" class="btn btn-info">Edit</a>
-                                            {{-- <a href="{{ url('about/delete/'.$about->id) }}" onclick="return confirm('Are you sure to delete')" class="btn btn-danger">Delete</a> --}}
+                                            <a href="{{ url('contact/edit/'.$con->id) }}" class="btn btn-info">Edit</a>
+                                            <a href="{{ url('contact/delete/'.$con->id) }}" onclick="return confirm('Are you sure to delete')" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                     @endforeach

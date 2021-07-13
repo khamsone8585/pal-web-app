@@ -10,11 +10,11 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/static/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{asset('frontend/assets/static/favicon.png')}}" rel="icon">
+    <link href="{{asset('frontend/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="assets/css/font.css">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/font.css') }}">
     
     <!-- Vendor CSS Files -->
     <link href="{{ asset('frontend/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">

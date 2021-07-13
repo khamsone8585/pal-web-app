@@ -44,8 +44,8 @@ class AboutController extends Controller
         return redirect()->route('home.about')->with('success', 'About Updated Successfully');
     }
     
-    public function DeleteAbout($id){
-        $delete = HomeAbout::find($id)->Delete();
-        return redirect()->back()->with('success', 'About Deleted Successfully');
-    }
+    // public function DeleteAbout($id){
+    //     $delete = HomeAbout::find($id)->Delete();
+    //     return redirect()->back()->with('success', 'About Deleted Successfully');
+    // }
 }

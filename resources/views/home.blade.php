@@ -194,22 +194,22 @@
                     <h2>About us</h2>
                     </div>
                     <p>
-                    Phanthamit Analytical Lab (PAL), is an independent Environment Laboratory Service Provider that offers international standard laboratory services with quality instruments, well trained staff and is ISO/IEC 17025 accredited.
-                    PAL provides a wide range of environmental analysis services which include Water, Air, Sediment & Soil along with Noise and Vibration testing.  These services are done according to Lao National Environmental Standards.  PAL provides an efficient, budget conscious service with focus on delivering high quality results.
-                    PAL also provides services for samples to be analyzed by laboratories in Thailand under the collaboration with Eastern Thai Consulting (1992).  In addition, PAL provides a highly professional service in standardized calibration for measurement and scientific instruments under the collaboration with AMARC in Thailand.
+                        {{ $abouts->content }}
                     </p>
                     <div class="row icon-boxes">
                     <div class="col-md-6">
                         <i class="bi bi-eye-fill"></i>
                         <h4>Vision</h4>
-                        <p>To be the leader in private analytical testing laboratory in Lao PDR with the international standard quality service.</p>
+                        <p>
+                            {{ $abouts->vision }}
+                        </p>
                     </div>
                     <div class="col-md-6 mt-4 mt-md-0">
                         <i class="bi bi-bullseye"></i>
                         <h4>Mission</h4>
-                        <p>To provide highest quality laboratory services in a timely, accurate, and efficient manner through the use of quality instrument, standardized testing method and technical expertise.
-                        To continually improve quality, processes, and knowledge base through research and collaboration.
-                        To recognize and pay attention to the needs of customers, working openly and cooperatively in setting work schedules and meeting targets.</p>
+                        <p>
+                            {{ $abouts->mission }}
+                        </p>
                     </div>
                     </div>
                 </div>

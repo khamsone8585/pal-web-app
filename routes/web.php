@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
@@ -21,7 +22,8 @@ use App\Models\User;
 
 Route::get('/', function () {
     $brands = DB::table('brands')->get();
-    return view('home',compact('brands'));
+    $abouts = DB::table('home_abouts')->first();
+    return view('home',compact('brands','abouts'));
 });
 //Verifition_Email
 Route::get('/email/verify', function () {
@@ -68,5 +70,10 @@ Route::get('home/about',[AboutController::class,'HomeAbout'])->name('home.about'
 //Route::post('store/about',[AboutController::class,'StoreAbout'])->name('store.about');
 Route::get('about/edit/{id}',[AboutController::class,'EditAbout']);
 Route::post('update/homeabout/{id}',[AboutController::class,'UpdateAbout']);
-Route::get('about/delete/{id}',[AboutController::class,'DeleteAbout']);
+// Route::get('about/delete/{id}',[AboutController::class,'DeleteAbout']);
+
+//Admin Contact Page Route
+Route::get('admin/contact',[ContactController::class,'AdminContact'])->name('admin.contact');
+Route::get('admin/add/contact',[ContactController::class,'AdminAddContact'])->name('add.contact');
+Route::post('admin/store/contact',[ContactController::class,'AdminStoreContact'])->name('store.contact');
 

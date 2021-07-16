@@ -24,7 +24,8 @@ use App\Models\User;
 Route::get('/', function () {
     $brands = DB::table('brands')->get();
     $abouts = DB::table('home_abouts')->first();
-    return view('home',compact('brands','abouts'));
+    $contacts = DB::table('contacts')->first();
+    return view('home',compact('brands','abouts','contacts'));
 });
 //Verifition_Email
 Route::get('/email/verify', function () {

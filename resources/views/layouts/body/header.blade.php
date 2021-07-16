@@ -24,7 +24,7 @@
         </li>
         <li><a class="nav-link scrollto " href="#portfolio">News and Events</a></li>
         <li><a class="nav-link scrollto" href="#about">About us</a></li>
-        <li><a class="nav-link scrollto" href="#contact">Contact us</a></li>
+        <li><a class="nav-link scrollto" href="#{{route('contact')}}">Contact us</a></li>
         <li><a class="nav-link scrollto" href="#ourclient">Our Client</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

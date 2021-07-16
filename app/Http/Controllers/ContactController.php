@@ -17,7 +17,7 @@ class ContactController extends Controller
     public function AdminAddContact(){
         return view('admin.contact.create');
     }
-    public function AddminStoreContact(Request $request){
+    public function AdminStoreContact(Request $request){
         Contact::insert([
             'address' => $request->content,
             'email' => $request->vision,

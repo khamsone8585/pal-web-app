@@ -186,31 +186,34 @@
             <section id="about" class="about">
             <div class="container">
                 <div class="row">
-                <div class="col-lg-6 align-self-center">
-                    <img src="assets/img/about.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-6 pt-4 pt-lg-0">
-                    <div class="section-title">
-                    <h2>About us</h2>
+                    <div class="col-lg-6 align-self-center">
+                        <img src="assets/img/about.jpg" class="img-fluid" alt="">
                     </div>
-                    <p>
-                        {{ $abouts->content }}
-                    </p>
-                    <div class="row icon-boxes">
-                    <div class="col-md-6">
-                        <i class="bi bi-eye-fill"></i>
-                        <h4>Vision</h4>
+                    <div class="col-lg-6 pt-4 pt-lg-0">
+                        <div class="section-title">
+                        <h2>About us</h2>
+                        </div>
                         <p>
-                            {{ $abouts->vision }}
+                            {{ $abouts->content }}
                         </p>
+                        <div class="row icon-boxes">
+                        <div class="col-md-6">
+                            <i class="bi bi-eye-fill"></i>
+                            <h4>Vision</h4>
+                            <p>
+                                {{ $abouts->vision }}
+                            </p>
+                        </div>
+                        <div class="col-md-6 mt-4 mt-md-0">
+                            <i class="bi bi-bullseye"></i>
+                            <h4>Mission</h4>
+                            <p>
+                                {{ $abouts->mission }}
+                            </p>
+                        </div>
+                        </div>
                     </div>
-                    <div class="col-md-6 mt-4 mt-md-0">
-                        <i class="bi bi-bullseye"></i>
-                        <h4>Mission</h4>
-                        <p>
-                            {{ $abouts->mission }}
-                        </p>
-                    </div>
+<<<<<<< HEAD
                     </div>
                 </div>
 
@@ -223,6 +226,18 @@
 
                     </p>
                 </div>
+=======
+                            {{--         
+                            <div class="col-lg-12 text-end">
+                                <p class="text-muted">
+                                <a href="#" class="text-reset">Have a question?</a>.
+                                </p>
+                                <p class="text-muted">
+                                <a href="#" class="text-reset">Need a quote?</a>.
+                                
+                                </p>
+                            </div> --}}
+>>>>>>> d4278de... pull least
                 </div>
 
             </div>
@@ -240,6 +255,7 @@
                 <div class="col-lg-10">
 
                     <div class="info-wrap">
+<<<<<<< HEAD
                     <div class="row">
                         <div class="col-lg-3 info">
                         <i class="bi bi-geo-alt"></i>
@@ -268,6 +284,29 @@
                     </div>
                     </div>
 
+=======
+                        <div class="row">
+                            <div class="col-lg-4 info">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Location:</h4>
+                                <p>{{ $contacts->address }}</p>
+                            </div>
+        
+                            <div class="col-lg-4 info mt-3 mt-lg-0">
+                                <i class="bi bi-envelope"></i>
+                                <h4>Email:</h4>
+                                <p>{{ $contacts->email }}<br>contact@example.com</p>
+                            </div>
+        
+                            <div class="col-lg-4 info mt-3 mt-lg-0">
+                                <i class="bi bi-phone"></i>
+                                <h4>Call:</h4>
+                                <p>{{ $contacts->phone }}<br>+856 20 22222204</p>
+                            </div>
+                        </div>
+                    </div>
+    
+>>>>>>> d4278de... pull least
                 </div>
 
                 </div>

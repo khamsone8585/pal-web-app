@@ -11,7 +11,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Contact Address</label>
-                        <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Contact Email</label>
@@ -20,10 +20,6 @@
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Contact Phone</label>
                         <input type="text" name="phone" class="form-control" id="exampleInput" aria-describedby="emailHelp">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Contact Open</label>
-                        <textarea class="form-control" name="mission"id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                     <div class="form-footer pt-4 pt-5 mt-4 border-top">
                         <button type="submit" class="btn btn-primary btn-default">Submit</button>

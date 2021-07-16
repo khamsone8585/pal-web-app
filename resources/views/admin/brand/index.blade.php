@@ -8,6 +8,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="card">
+
                         @if(session('success'))
                             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                                 <strong> {{ session('success') }}!</strong>
@@ -16,6 +17,7 @@
                                 </button>
                             </div>
                         @endif
+
                         <div class="card-header">All Brand</div>
                             <table class="table">
                                 <thead>
@@ -34,7 +36,7 @@
                                         <th scope="row">{{ $brands->firstItem()+$loop->index }}</th>
                                         <td> {{ $item->brand_name }} </td>
                                         <td> <img src="{{asset($item->brand_image)}}" style="height: 40px; with:70px;" alt=""> </td>
-                                        <td> 
+                                        <td>
                                             @if($item->created_at == NULL)
                                             <span class="text-danger">NO Date Set</span>
                                             @else

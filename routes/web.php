@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ChangePass;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -74,6 +75,13 @@ Route::post('update/homeabout/{id}',[AboutController::class,'UpdateAbout']);
 
 //Admin Contact Page Route
 Route::get('admin/contact',[ContactController::class,'AdminContact'])->name('admin.contact');
+Route::get('admin/message',[ContactController::class,'AdminMessage'])->name('admin.message');
 Route::get('admin/add/contact',[ContactController::class,'AdminAddContact'])->name('add.contact');
 Route::post('admin/store/contact',[ContactController::class,'AdminStoreContact'])->name('store.contact');
 
+//Contact Form
+Route::get('contact',[ContactController::class,'Contact'])->name('contact');
+Route::post('contact/form',[ContactController::class,'ContactForm'])->name('contact.form');
+
+//Change Password
+Route::get('user/password',[ChangePass::class,'CPassword'])->name('change.password');

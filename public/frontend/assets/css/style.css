@@ -504,6 +504,7 @@ section {
   background: #fff;
   transition: ease-in-out 0.3s;
   display: flex;
+  cursor: default;
 }
 
 .services .icon-box i {
@@ -531,13 +532,15 @@ section {
   font-size: 14px;
 }
 
+/* 
 .services .icon-box:hover {
   box-shadow: 0px 2px 22px rgba(0, 0, 0, 0.08);
 }
 
 .services .icon-box:hover h4 a {
   color: var(--primary-color);
-}
+} */
+
 .services .icon-box img{
   width: 100px;
 }

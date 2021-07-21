@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
 
-        <div class="col-lg-3 col-md-6 footer-contact">
+        <div class="col-lg-4 col-md-4 footer-contact">
             <img src="./assets/img/pal_logo.png" alt="">
             <p>
             No. 122, Unit 5, Dongpalane Thong Village<br>
@@ -17,7 +17,7 @@
             </p>
         </div>
 
-        <div class="col-lg-2 col-md-6 footer-links">
+        <div class="col-lg-4 col-md-4 footer-links">
             <h4>Useful Links</h4>
             <ul>
             <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
@@ -28,7 +28,7 @@
             </ul>
         </div>
 
-        <div class="col-lg-3 col-md-6 footer-links">
+        <div class="col-lg-4 col-md-4 footer-links">
             <h4>Our Services</h4>
             <ul>
             <li><i class="bx bx-chevron-right"></i> <a href="#">Air Quality Analysis</a></li>
@@ -38,14 +38,6 @@
             <li><i class="bx bx-chevron-right"></i> <a href="#">Sediment And Soil Analysis</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#">Vibration Measurement</a></li>
             </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our PAL</h4>
-            <p>please create email resume and cover letter to subscribe</p>
-            <form action="" method="post">
-            <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
         </div>
 
         </div>

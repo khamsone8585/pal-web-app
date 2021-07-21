@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brand;
+use App\Models\Multipic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Carbon;
 use Image;
 use Auth;
+use Illuminate\Support\Arr;
 
 class BrandController extends Controller
 {
@@ -53,7 +55,12 @@ class BrandController extends Controller
             'created_at' => Carbon::now()
         ]);
 
-        return Redirect()->back()->with('success','Brand Inserted Successfully');
+        $notification = array(
+            'message' => 'Brand Inserted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return Redirect()->back()->with($notification);
     }
 
     public function Edit($id){
@@ -88,13 +95,25 @@ class BrandController extends Controller
                 'brand_image' => $last_img,
                 'created_at' => Carbon::now()
             ]);
-            return Redirect()->back()->with('success','Brand Updated Successfully');
+
+            $notification = array(
+                'message' => 'Brand Updated Successfully',
+                'alert-type' => 'info'
+            );
+
+            return Redirect()->back()->with($notification);
         }else{
             Brand::find($id)->update([
                 'brand_name' => $request->brand_name,
                 'created_at' => Carbon::now()
             ]);
-            return Redirect()->back()->with('success','Brand Updated Successfully');
+
+            $notification = array(
+                'message' => 'Brand Updated Successfully',
+                'alert-type' => 'warning'
+            );
+
+            return Redirect()->back()->with($notification);
         }
         
     }
@@ -103,9 +122,43 @@ class BrandController extends Controller
         $old_image = $image->brand_image;
         unlink($old_image);
         Brand::find($id)->delete();
-        return Redirect()->back()->with('success','Brand Deleted Successfully');
-    }
 
+        $notification = array(
+            'message' => 'Brand Deleted Successfully',
+            'alert-type' => 'error'
+        );
+        return Redirect()->back()->with($notification);
+    }
+    //this is for multi image all method
+    public function Multipic(){
+        $images = Multipic::all();
+        return view('admin.multipic.index',compact('images'));
+    }
+    public function StoreImage(Request $request){
+        $image = $request->file('image');
+
+        foreach($image as $multi_img){
+
+            $name_gen = hexdec(uniqid()).'.'.$multi_img->getClientOriginalExtension();
+            Image::make($multi_img)->resize(300,300)->save('image/multi/'.$name_gen);
+
+            $last_img = 'image/multi/'.$name_gen;
+
+            Multipic::insert([
+                'image' => $last_img,
+                'created_at' => Carbon::now()
+            ]);
+
+            $notification = array(
+                'message' => 'Multi image Inserted Successfully',
+                'alert-type' => 'success'
+            );
+
+        }    //end of the foreach   
+
+        return Redirect()->back()->with($notification);
+    }
+    
     public function Logout(){
         Auth::logout();
         return Redirect()->route('login')->with('success','User Logout!!');

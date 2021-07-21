@@ -22,7 +22,8 @@
 
     <!-- SLEEK CSS -->
     <link id="sleek-css" rel="stylesheet" href="{{asset('backend/assets/css/sleek.css')}}" />
-
+    
+    <link rel="stylesheet" type="text/css" href="{{asset('toastr.min.css')}}">
 
 
     <!-- FAVICON -->
@@ -139,7 +140,7 @@
                         </li>
 
                         <li>
-                            <a href="profile.html">
+                            <a href="{{ route('profile.update') }}">
                             <i class="mdi mdi-account"></i> My Profile
                             </a>
                         </li>
@@ -176,15 +177,9 @@
 
                     <footer class="footer mt-auto">
                 <div class="copyright bg-white">
-                <p>
-                    &copy; <span id="copy-year">2019</span> Copyright Sleek Dashboard Bootstrap Template by
-                    <a
-                    class="text-primary"
-                    href="http://www.iamabdus.com/"
-                    target="_blank"
-                    >Abdus</a
-                    >.
-                </p>
+                    <p class="text-center">&copy; 2021 Copyright Design By 
+                    <a class="text-primary" href="http://bdb.com.la" target="_blank">BDB.com.la</a>.
+                    </p>
                 </div>
                 <script>
                     var d = new Date();
@@ -217,6 +212,31 @@
     <script src="{{asset('backend/assets/js/date-range.js')}}"></script>
     <script src="{{asset('backend/assets/js/map.js')}}"></script>
     <script src="{{asset('backend/assets/js/custom.js')}}"></script>
+    
+    <script type="text/javascript" src="{{asset('toastr.min.js')}}"></script>
+
+    <script>
+        @if(Session::has('message'))
+        var type = "{{ Session::get('alert-type','info') }}"
+        switch(type){
+            case 'info': 
+                toastr.info( " {{ Session::get('message') }} " );
+            break;
+
+            case 'success': 
+                toastr.success( " {{ Session::get('message') }} " );
+            break;
+
+            case 'warning': 
+                toastr.warning( " {{ Session::get('message') }} " );
+            break;
+
+            case 'error': 
+                toastr.error( " {{ Session::get('message') }} " );
+            break;
+        }
+        @endif
+    </script>
 
 
 

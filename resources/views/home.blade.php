@@ -9,15 +9,15 @@
                 <div class="section-title">
                 <h2>Our Services</h2>
                 </div>
-
+                
                 <div class="row">
                 <div class="col-md-6">
                     <div class="icon-box">
                     <div class="logo">
-                        <img src="./assets/img/Ourservice/1.png" alt="" srcset="">
+                        <img src="{{asset('frontend/assets/img/Ourservice/1.png')}}" alt="" srcset="">
                     </div>
                     <div class="content">
-                        <h4><a href="#Air">Air Quality Analysis</a></h4>
+                        <h4 href="#Air">Air Quality Analysis</h4>
                         <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                     </div>
                     </div>
@@ -25,10 +25,10 @@
                 <div class="col-md-6 mt-4 mt-lg-0">
                     <div class="icon-box">
                     <div class="logo">
-                        <img src="./assets/img/Ourservice/2.png" alt="" srcset="">
+                        <img src="{{asset('frontend/assets/img/Ourservice/2.png')}}" alt="" srcset="">
                     </div>
                     <div class="content">
-                        <h4><a href="#">Water Quality Analysis</a></h4>
+                        <h4><a href="#Water">Water Quality Analysis</a></h4>
                     <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                     </div>
                     </div>
@@ -36,10 +36,10 @@
                 <div class="col-md-6 mt-4">
                     <div class="icon-box">
                     <div class="logo">
-                        <img src="./assets/img/Ourservice/3.png" alt="" srcset="">
+                        <img src="{{asset('frontend/assets/img/Ourservice/3.png')}}" alt="" srcset="">
                     </div>
                     <div class="content">
-                        <h4><a href="#">Noise Level Measurement</a></h4>
+                        <h4><a href="#Noise">Noise Level Measurement</a></h4>
                     <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                     </div>
                     </div>
@@ -47,10 +47,10 @@
                 <div class="col-md-6 mt-4">
                     <div class="icon-box">
                     <div class="logo">
-                        <img src="./assets/img/Ourservice/4.png" alt="" srcset="">
+                        <img src="{{asset('frontend/assets/img/Ourservice/4.png')}}" alt="" srcset="">
                     </div>
                     <div class="content">
-                        <h4><a href="#">Calibration Services</a></h4>
+                        <h4><a href="#Calibration">Calibration Services</a></h4>
                     <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                     </div>
                     </div>
@@ -58,10 +58,10 @@
                 <div class="col-md-6 mt-4">
                     <div class="icon-box">
                     <div class="logo">
-                        <img src="./assets/img/Ourservice/5.png" alt="" srcset="">
+                        <img src="{{asset('frontend/assets/img/Ourservice/5.png')}}" alt="" srcset="">
                     </div>
                     <div class="content">
-                        <h4><a href="#">Sediment And Soil Analysis</a></h4>
+                        <h4><a href="#Sediment">Sediment And Soil Analysis</a></h4>
                     <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                     </div>
                     </div>
@@ -69,10 +69,10 @@
                 <div class="col-md-6 mt-4">
                     <div class="icon-box">
                     <div class="logo">
-                        <img src="./assets/img/Ourservice/6.png" alt="" srcset="">
+                        <img src="{{asset('frontend/assets/img/Ourservice/6.png')}}" alt="" srcset="">
                     </div>
                     <div class="content">
-                        <h4><a href="#">Vibration Measurement</a></h4>
+                        <h4><a href="#Vibration">Vibration Measurement</a></h4>
                     <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                     </div>
                     </div>
@@ -81,106 +81,40 @@
             </div>
             </section><!-- End Services Section -->
 
-            <!-- ======= Portfolio Section ======= -->
-            <section id="portfolio" class="portfolio">
-            <div class="container">
-
-                <div class="section-title">
-                <h2>News and Events</h2>
-                </div>
-
-                <div class="row">
-                <div class="col-lg-12">
-                    <ul id="portfolio-flters">
-                    <li data-filter="*" class="filter-active">All</li>
-                    <li data-filter=".filter-air">Air</li>
-                    <li data-filter=".filter-Water">Water</li>
-                    <li data-filter=".filter-Noise">Noise</li>
-                    <li data-filter=".filter-Calibration">Calibration</li>
-                    <li data-filter=".filter-Sediment">Sediment</li>
-                    <li data-filter=".filter-Vibration">Vibration</li>
-                    </ul>
-                </div>
-                </div>
-
-                <div class="row portfolio-container">
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-air wow fadeInUp">
-                    <div class="portfolio-wrap">
-                    <figure>
-                        <img src="assets/img/Ourservice/Air/1-4.png" class="img-fluid" alt="" id="Air">
-                        <a href="assets/img/Ourservice/Air/1-4.png" data-gallery="portfolioGallery" class="link-preview portfolio-lightbox" title="Preview"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
-                    </figure>
-
-                    <div class="portfolio-info">
-                        <h4><a href="portfolio-details.html">Air Quality Analysis</a></h4>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-Water wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="portfolio-wrap">
-                    <figure>
-                        <img src="assets/img/Ourservice/Water/9-1.png" class="img-fluid" alt="">
-                        <a href="assets/img/Ourservice/Water/9-1.png" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
-                    </figure>
-
-                    <div class="portfolio-info">
-                        <h4><a href="portfolio-details.html">Water Quality Analysis</a></h4>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-Calibration wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="portfolio-wrap">
-                    <figure>
-                        <img src="assets/img/Ourservice/Cailbration/1.png" class="img-fluid" alt="">
-                        <a href="assets/img/Ourservice/Cailbration/1.png" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
-                    </figure>
-
-                    <div class="portfolio-info">
-                        <h4><a href="portfolio-details.html">Calibration</a></h4>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-Sediment wow fadeInUp">
-                    <div class="portfolio-wrap">
-                    <figure>
-                        <img src="assets/img/Ourservice/Sediment/2-2.png" class="img-fluid" alt="">
-                        <a href="assets/img/Ourservice/Sediment/2-2.png" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
-                    </figure>
-
-                    <div class="portfolio-info">
-                        <h4><a href="portfolio-details.html">Sediment</a></h4>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 portfolio-item filter-Vibration wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="portfolio-wrap">
-                    <figure>
-                        <img src="assets/img/Ourservice/Vibration/1-3.png" class="img-fluid" alt="">
-                        <a href="assets/img/Ourservice/Vibration/1-3.png" class="link-preview portfolio-lightbox" data-gallery="portfolioGallery" title="Preview"><i class="bx bx-plus"></i></a>
-                        <a href="portfolio-details.html" class="link-details" title="More Details"><i class="bx bx-link"></i></a>
-                    </figure>
-
-                    <div class="portfolio-info">
-                        <h4><a href="portfolio-details.html">Vibration</a></h4>
-                        <p>Web</p>
-                    </div>
-                    </div>
-                </div>
-
-
-                </div>
-
+            
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+  
+          <div class="section-title" data-aos="fade-up">
+            <h2>Portfolio</h2>
+          </div>
+  
+          <div class="row" data-aos="fade-up">
+            <div class="col-lg-12 d-flex justify-content-center">
+               
             </div>
-            </section><!-- End Portfolio Section -->
+          </div>
+  
+          <div class="row portfolio-container" data-aos="fade-up">
+  
+           @foreach($images as $img)
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+              <img src="{{ $img->image  }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <a href="{{ $img->image  }}" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" class="details-link" title="More Details"> </a>
+              </div>
+            </div>
+            @endforeach
+  
+            
+   
+  
+          </div>
+  
+        </div>
+      </section><!-- End Portfolio Section -->
 
             <!-- ======= About Section ======= -->
             <section id="about" class="about">
@@ -213,33 +147,8 @@
                         </div>
                         </div>
                     </div>
-<<<<<<< HEAD
                     </div>
                 </div>
-
-                <div class="col-lg-12 text-end">
-                    <p class="text-muted">
-                    <a href="#" class="text-reset">Have a question?</a>.
-                    </p>
-                    <p class="text-muted">
-                    <a href="#" class="text-reset">Need a quote?</a>.
-
-                    </p>
-                </div>
-=======
-                            {{--         
-                            <div class="col-lg-12 text-end">
-                                <p class="text-muted">
-                                <a href="#" class="text-reset">Have a question?</a>.
-                                </p>
-                                <p class="text-muted">
-                                <a href="#" class="text-reset">Need a quote?</a>.
-                                
-                                </p>
-                            </div> --}}
->>>>>>> d4278de... pull least
-                </div>
-
             </div>
             </section><!-- End About Section -->
 
@@ -255,58 +164,28 @@
                 <div class="col-lg-10">
 
                     <div class="info-wrap">
-<<<<<<< HEAD
-                    <div class="row">
-                        <div class="col-lg-3 info">
-                        <i class="bi bi-geo-alt"></i>
-                        <h4>Location:</h4>
-                        <p>No. 122, Unit 5, Dongpalane Thong Village<br>Sisattanak District, Vientiane Capital
-                            Lao PRD</p>
-                        </div>
-
-                        <div class="col-lg-3 info mt-3 mt-lg-0">
-                        <i class="bi bi-envelope"></i>
-                        <h4>Email:</h4>
-                        <p>info@example.com<br>contact@example.com</p>
-                        </div>
-
-                        <div class="col-lg-3 info mt-3 mt-lg-0">
-                        <i class="bi bi-phone"></i>
-                        <h4>Call:</h4>
-                        <p>+856 21 263962<br>+856 20 22222204</p>
-                        </div>
-
-                        <div class="col-lg-3 info mt-3 mt-lg-0">
-                        <i class="bi bi-clock"></i>
-                        <h4>Open:</h4>
-                        <p>9.00 – 18.00 Mon – Fri</p>
-                        </div>
-                    </div>
-                    </div>
-
-=======
                         <div class="row">
-                            <div class="col-lg-4 info">
-                                <i class="bi bi-geo-alt"></i>
-                                <h4>Location:</h4>
-                                <p>{{ $contacts->address }}</p>
+                            <div class="col-lg-3 info">
+                            <i class="bi bi-geo-alt"></i>
+                            <h4>Location:</h4>
+                            <p>No. 122, Unit 5, Dongpalane Thong Village<br>Sisattanak District, Vientiane Capital
+                                Lao PRD</p>
                             </div>
-        
-                            <div class="col-lg-4 info mt-3 mt-lg-0">
-                                <i class="bi bi-envelope"></i>
-                                <h4>Email:</h4>
-                                <p>{{ $contacts->email }}<br>contact@example.com</p>
+
+                            <div class="col-lg-3 info mt-3 mt-lg-0">
+                            <i class="bi bi-envelope"></i>
+                            <h4>Email:</h4>
+                            <p>info@example.com<br>contact@example.com</p>
                             </div>
-        
-                            <div class="col-lg-4 info mt-3 mt-lg-0">
-                                <i class="bi bi-phone"></i>
-                                <h4>Call:</h4>
-                                <p>{{ $contacts->phone }}<br>+856 20 22222204</p>
+
+                            <div class="col-lg-3 info mt-3 mt-lg-0">
+                            <i class="bi bi-phone"></i>
+                            <h4>Call:</h4>
+                            <p>+856 21 263962<br>+856 20 22222204</p>
                             </div>
                         </div>
                     </div>
-    
->>>>>>> d4278de... pull least
+
                 </div>
 
                 </div>

@@ -8,24 +8,26 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">All Brand</div>
+                        <div class="card-header">All Service</div>
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th scope="col">SL No</th>
-                                        <th scope="col">Brand Name</th>
-                                        <th scope="col">Brand Image</th>
+                                        <th scope="col">Service Title</th>
+                                        <th scope="col">Service Content</th>
+                                        <th scope="col">Service logo</th>
                                         <th scope="col">Created At</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                         <!-- @php($i = 1) -->
-                                    @foreach ($brands as $item)
+                                    @foreach ($services as $item)
                                     <tr>
-                                        <th scope="row">{{ $brands->firstItem()+$loop->index }}</th>
-                                        <td> {{ $item->brand_name }} </td>
-                                        <td> <img src="{{asset($item->brand_image)}}" style="height: 40px; with:70px;" alt=""> </td>
+                                        <th scope="row">{{ $services->firstItem()+$loop->index }}</th>
+                                        <td> {{ $item->title }} </td>
+                                        <td> {{ $item->content }} </td>
+                                        <td> <img src="{{asset($item->logo)}}" style="height: 40px; with:70px;" alt=""> </td>
                                         <td>
                                             @if($item->created_at == NULL)
                                             <span class="text-danger">NO Date Set</span>
@@ -34,8 +36,8 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{ url('brand/edit/'.$item->id) }}" class="btn btn-info">Edit</a>
-                                            <a href="{{ url('brand/delete/'.$item->id) }}" onclick="return confirm('Are you sure to delete')" class="btn btn-danger">Delete</a>
+                                            <a href="{{ url('service/edit/'.$item->id) }}" class="btn btn-info">Edit</a>
+                                            <a href="{{ url('service/delete/'.$item->id) }}" onclick="return confirm('Are you sure to delete')" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                     @endforeach

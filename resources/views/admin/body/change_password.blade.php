@@ -7,9 +7,10 @@
         </div>
         <div class="card-body">
             <form method="POST"  action="{{ route('password.update') }}" class="form-pill">
+                @csrf
                 <div class="form-group">
                     <label for="exampleFormControlInput3">Current Password</label>
-                    <input type="password" name="old_password" class="form-control" id="current_password" placeholder="Current Password">
+                    <input type="password" name="oldpassword" class="form-control" id="current_password" placeholder="Current Password">
 
                     @error('old_password')
                         <span class="text-danger"> {{ $message }} </span>

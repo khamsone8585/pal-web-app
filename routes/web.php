@@ -6,9 +6,12 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChangePass;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use App\Models\Multipic;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,17 +23,18 @@ use App\Models\User;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     $brands = DB::table('brands')->get();
+    $tags = DB::table('tags')->get();
     $abouts = DB::table('home_abouts')->first();
     $contacts = DB::table('contacts')->first();
-    return view('home',compact('brands','abouts','contacts'));
+    $images = DB::table('multipics')->get();
+    return view('home',compact('brands','abouts','contacts','tags','images'));
 });
 //Verifition_Email
-Route::get('/email/verify', function () {
-    return view('auth.verify-email');
-})->middleware('auth')->name('verification.notice');
+// Route::get('/email/verify', function () {
+//     return view('auth.verify-email');
+// })->middleware('auth')->name('verification.notice');
 
 //Category Controller
 Route::get('category/all',[CategoryController::class,'AllCat'])->name('all.category');
@@ -51,8 +55,11 @@ Route::get('brand/edit/{id}',[BrandController::class,'Edit']);
 Route::post('brand/update/{id}',[BrandController::class,'Update']);
 Route::get('brand/delete/{id}',[BrandController::class,'Delete']);
 
+//Multi image
+Route::get('multi/image',[BrandController::class,'Multipic'])->name('multi.image');
+Route::post('multi/add',[BrandController::class,'StoreImage'])->name('store.image');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum'])->get('/dashboard', function () {
 
     // $users = DB::table('users')->get();
     return view('admin.index');
@@ -80,9 +87,27 @@ Route::get('admin/message',[ContactController::class,'AdminMessage'])->name('adm
 Route::get('admin/add/contact',[ContactController::class,'AdminAddContact'])->name('add.contact');
 Route::post('admin/store/contact',[ContactController::class,'AdminStoreContact'])->name('store.contact');
 
+//Tag
+Route::get('admin/tag',[TagController::class,'AllTag'])->name('all.tag');
+Route::post('tag/add',[TagController::class,'StoreTag'])->name('store.tag');
+
+Route::get('tag/edit/{id}',[TagController::class,'Edit']);
+Route::post('tag/update/{id}',[TagController::class,'Update']);
+Route::get('tag/delete/{id}',[TagController::class,'Delete']);
+
+//Service
+Route::get('admin/service',[ServiceController::class,'AllService'])->name('all.service');
+
+
+
 //Contact Form
 Route::get('contact',[ContactController::class,'Contact'])->name('contact');
 Route::post('contact/form',[ContactController::class,'ContactForm'])->name('contact.form');
 
 //Change Password
 Route::get('user/password',[ChangePass::class,'CPassword'])->name('change.password');
+Route::post('password/update',[ChangePass::class,'UpdatePassword'])->name('password.update');
+
+//User Profile
+Route::get('user/profile',[ChangePass::class,'PUpdate'])->name('profile.update');
+Route::post('user/profile/update',[ChangePass::class,'UpdateProfile'])->name('update.user.profile');

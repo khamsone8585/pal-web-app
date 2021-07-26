@@ -29,6 +29,7 @@ Route::get('/', function () {
     $abouts = DB::table('home_abouts')->first();
     $contacts = DB::table('contacts')->first();
     $images = DB::table('multipics')->get();
+    $services = DB::table('services')->get();
     return view('home',compact('brands','abouts','contacts','tags','images'));
 });
 //Verifition_Email
@@ -97,8 +98,10 @@ Route::get('tag/delete/{id}',[TagController::class,'Delete']);
 
 //Service
 Route::get('admin/service',[ServiceController::class,'AllService'])->name('all.service');
-
-
+Route::post('service/add',[ServiceController::class,'StoreService'])->name('store.service');
+Route::get('service/edit/{id}',[ServiceController::class,'Edit']);
+Route::post('service/update/{id}',[ServiceController::class,'Update']);
+Route::get('service/delete/{id}',[ServiceController::class,'Delete']);
 
 //Contact Form
 Route::get('contact',[ContactController::class,'Contact'])->name('contact');

@@ -11,7 +11,7 @@
                 </div>
                 
                 <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 mt-4 mt-lg-0">
                     <div class="icon-box">
                     <div class="logo">
                         <img src="{{asset('frontend/assets/img/Ourservice/1.png')}}" alt="" srcset="">
@@ -103,7 +103,7 @@
               <img src="{{ $img->image  }}" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <a href="{{ $img->image  }}" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" class="details-link" title="More Details"> </a>
+                <a href="{{ $img->image  }}" class="details-link" title="More Details"> </a>
               </div>
             </div>
             @endforeach

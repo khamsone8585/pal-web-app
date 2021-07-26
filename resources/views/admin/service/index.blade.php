@@ -16,7 +16,6 @@
                                         <th scope="col">Service Title</th>
                                         <th scope="col">Service Content</th>
                                         <th scope="col">Service logo</th>
-                                        <th scope="col">Created At</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -24,17 +23,10 @@
                                         <!-- @php($i = 1) -->
                                     @foreach ($services as $item)
                                     <tr>
-                                        <th scope="row">{{ $services->firstItem()+$loop->index }}</th>
+                                        <th scope="row">{{$i++}}</th>
                                         <td> {{ $item->title }} </td>
                                         <td> {{ $item->content }} </td>
                                         <td> <img src="{{asset($item->logo)}}" style="height: 40px; with:70px;" alt=""> </td>
-                                        <td>
-                                            @if($item->created_at == NULL)
-                                            <span class="text-danger">NO Date Set</span>
-                                            @else
-                                            {{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }}
-                                            @endif
-                                        </td>
                                         <td>
                                             <a href="{{ url('service/edit/'.$item->id) }}" class="btn btn-info">Edit</a>
                                             <a href="{{ url('service/delete/'.$item->id) }}" onclick="return confirm('Are you sure to delete')" class="btn btn-danger">Delete</a>
@@ -47,24 +39,33 @@
                     </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <div class="card-header">Add Brand</div>
+                        <div class="card-header">Add Service</div>
                         <div class="card-body">
-                            <form action="{{route('store.brand')}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('store.service')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="exampleInput">Brand Name</label>
-                                    <input type="text" name="brand_name" class="form-control" id="exampleInput" aria-describedby="emailHelp" placeholder="ປ້ອນປະເພດຜູ້ໃຊ້">
+                                    <label for="exampleInput">Service title</label>
+                                    <input type="text" name="title" class="form-control" id="exampleInput" aria-describedby="emailHelp" placeholder="Service Title">
 
-                                        @error('category_name')
+                                        @error('title')
                                             <span class="text-danger"> {{ $message }} </span>
                                         @enderror
 
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInput">Brand Image</label>
-                                    <input type="file" name="brand_image" class="form-control" id="exampleInput" aria-describedby="emailHelp" placeholder="ປ້ອນປະເພດຜູ້ໃຊ້">
+                                    <label for="exampleFormControlTextarea1">Service Content</label>
+                                    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
 
-                                        @error('brand_image')
+                                        @error('content')
+                                            <span class="text-danger"> {{ $message }} </span>
+                                        @enderror
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInput">Service Logo</label>
+                                    <input type="file" name="logo" class="form-control" id="exampleInput" aria-describedby="emailHelp">
+
+                                        @error('logo')
                                             <span class="text-danger"> {{ $message }} </span>
                                         @enderror
 
